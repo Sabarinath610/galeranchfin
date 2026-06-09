@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { SITE_CONFIG, NAV_LINKS, SERVICES } from '@/constants'
+import { Logo } from '@/components/ui/Logo'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -12,10 +13,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="inline-block focus-ring rounded-sm mb-4">
-              <span className="font-display text-2xl text-cream leading-none tracking-tight">
-                {SITE_CONFIG.name}
-              </span>
+            <Link href="/" className="inline-flex focus-ring rounded-sm mb-4">
+              <Logo width={140} height={48} onDark />
             </Link>
             <p className="text-sm leading-relaxed text-cream/60 mt-3 mb-6">
               {SITE_CONFIG.tagline}

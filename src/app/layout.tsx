@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer'
 import { ScrollToTop } from '@/components/ui/ScrollToTop'
 import { ReadingProgress } from '@/components/ui/ReadingProgress'
 import { SITE_CONFIG } from '@/constants'
+import { FirebaseAnalytics } from '@/components/FirebaseAnalytics'
 
 const cormorant = Cormorant_Garamond({
   variable: '--font-cormorant',
@@ -83,6 +84,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        <FirebaseAnalytics />
         <ReadingProgress />
         <Navbar />
         <div className="flex-1 flex flex-col" id="main-content">

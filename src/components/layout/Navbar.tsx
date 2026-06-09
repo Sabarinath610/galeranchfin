@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { useScrollPosition } from '@/hooks/useScrollPosition'
 import { SITE_CONFIG, NAV_LINKS } from '@/constants'
 import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 
 export function Navbar() {
   const scrollY    = useScrollPosition()
@@ -71,7 +72,7 @@ export function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
           showSolid
-            ? 'bg-navy/95 backdrop-blur-md shadow-lg'
+            ? 'bg-navy-solid shadow-lg'
             : 'bg-transparent'
         )}
         role="banner"
@@ -82,15 +83,10 @@ export function Navbar() {
             {/* ── Logo ── */}
             <Link
               href="/"
-              className="flex flex-col focus-ring rounded-sm"
+              className="flex items-center focus-ring rounded-sm"
               aria-label={`${SITE_CONFIG.name} — go to homepage`}
             >
-              <span className="font-display text-xl text-cream leading-none tracking-tight">
-                {SITE_CONFIG.name}
-              </span>
-              <span className="font-mono text-[10px] text-gold tracking-[0.15em] uppercase mt-0.5">
-                {SITE_CONFIG.address.city}, CA
-              </span>
+              <Logo width={110} height={36} onDark priority />
             </Link>
 
             {/* ── Desktop nav ── */}

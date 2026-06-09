@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Check, ArrowRight } from 'lucide-react'
+import { cn } from '@/lib/utils'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { ServiceIcon } from '@/components/ui/ServiceIcon'
 import { TrustMeridian } from '@/components/ui/TrustMeridian'
@@ -29,12 +30,13 @@ export function ServicesDetail() {
           {SERVICES.map((service, index) => (
             <ScrollReveal key={service.id}>
               <div
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
-                }`}
+                className={cn(
+                  'grid grid-cols-1 lg:grid-cols-2 gap-12 items-center',
+                  index % 2 === 1 && 'lg:grid-flow-dense'
+                )}
               >
                 {/* Content */}
-                <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                <div className={cn(index % 2 === 1 && 'lg:col-start-2')}>
                   <ServiceIcon icon={service.icon} size="lg" className="mb-6" />
                   <h3 className="font-display text-2xl lg:text-3xl text-navy tracking-tight mb-3">
                     {service.title}
@@ -65,9 +67,11 @@ export function ServicesDetail() {
 
                 {/* Visual placeholder */}
                 <div
-                  className={`hidden lg:flex items-center justify-center rounded-sm bg-navy/5 border border-cream-mist min-h-[280px] ${
-                    index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''
-                  }`}
+                  className={cn(
+                    'hidden lg:flex items-center justify-center rounded-sm bg-navy/5 border border-cream-mist min-h-[280px]',
+                    index % 2 === 1 && 'lg:col-start-1',
+                    index % 2 === 1 && 'lg:row-start-1'
+                  )}
                   aria-hidden="true"
                 >
                   <ServiceIcon icon={service.icon} size="lg" className="scale-150 opacity-20" />

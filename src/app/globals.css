@@ -169,4 +169,16 @@ body {
   .bg-gold-gradient {
     background: linear-gradient(135deg, #C9A84C 0%, #E8C97A 50%, #C9A84C 100%);
   }
+
+  /* Explicit spacing utilities — ensure py-section works even if @theme token scanning misses them */
+  .py-section    { padding-top: 7.5rem; padding-bottom: 7.5rem; }
+  .py-section-sm { padding-top: 5rem;   padding-bottom: 5rem; }
+  .py-section-xs { padding-top: 4rem;   padding-bottom: 4rem; }
+
+  /* color-mix()-free fallback for the Navbar solid background (used below) */
+  .bg-navy-solid {
+    background-color: rgba(11, 31, 58, 0.95);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
 }

@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import { Award, MapPin, Users, Languages } from 'lucide-react'
 import { PageWrapper } from '@/components/layout/PageWrapper'
 import { TrustMeridian } from '@/components/ui/TrustMeridian'
 import { SectionLabel } from '@/components/ui/SectionLabel'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
-import { Button } from '@/components/ui/Button'
+import { Logo } from '@/components/ui/Logo'
 import { CTAStrip } from '@/components/sections/CTAStrip'
 import { SITE_CONFIG } from '@/constants'
 
@@ -21,6 +20,9 @@ export default function AboutPage() {
       <section className="pt-28 pb-20 lg:pt-36 lg:pb-28 bg-navy-deep text-cream">
         <div className="section-container">
           <ScrollReveal className="max-w-2xl">
+            <div className="mb-6">
+              <Logo width={150} height={50} onDark />
+            </div>
             <SectionLabel className="mb-4">About</SectionLabel>
             <TrustMeridian />
             <h1
