@@ -3,6 +3,8 @@ import { Cormorant_Garamond, Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollToTop } from '@/components/ui/ScrollToTop'
+import { ReadingProgress } from '@/components/ui/ReadingProgress'
 import { SITE_CONFIG } from '@/constants'
 
 const cormorant = Cormorant_Garamond({
@@ -81,11 +83,13 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} ${dmMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
+        <ReadingProgress />
         <Navbar />
         <div className="flex-1 flex flex-col" id="main-content">
           {children}
         </div>
         <Footer />
+        <ScrollToTop />
       </body>
     </html>
   )
